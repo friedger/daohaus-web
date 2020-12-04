@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import queryString from 'query-string';
-import { useApolloClient } from 'react-apollo';
 
 import { Web3Context, MolochContext } from '../../contexts/ContractContexts';
-import { GET_MOLOCH } from '../../util/queries';
 import { successMessagesText } from '../../util/helpers';
 import MolochService from '../../util/moloch-service';
 import HeadTags from '../../components/Shared/HeadTags/HeadTags';
@@ -16,7 +14,6 @@ import { DAO1 } from '../../util/constants';
 const chainData = supportedChains[+process.env.REACT_APP_NETWORK_ID];
 
 const DaoV2 = props => {
-  const client = useApolloClient();
   const [web3Context] = useContext(Web3Context);
 
   const [message, setMessage] = useState(null);
