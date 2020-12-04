@@ -15,6 +15,7 @@ import supportedChains from './util/chains';
 
 import './styles/global.scss';
 import './App.css';
+import { Connect } from '@stacks/connect-react';
 
 const chainData = supportedChains[+process.env.REACT_APP_NETWORK_ID];
 
@@ -29,21 +30,23 @@ function App() {
   asciiLog();
 
   return (
-    <ApolloProvider client={client}>
-      <SummonContextProvider>
-        <ContractContexts>
-          <ExploreContextProvider>
-            <div className="App">
-              <Router>
-                <NotificationBar />
-                <TopNav />
-                <Routes />
-              </Router>
-            </div>
-          </ExploreContextProvider>
-        </ContractContexts>
-      </SummonContextProvider>
-    </ApolloProvider>
+    <Connect>
+      <ApolloProvider client={client}>
+        <SummonContextProvider>
+          <ContractContexts>
+            <ExploreContextProvider>
+              <div className="App">
+                <Router>
+                  <NotificationBar />
+                  <TopNav />
+                  <Routes />
+                </Router>
+              </div>
+            </ExploreContextProvider>
+          </ContractContexts>
+        </SummonContextProvider>
+      </ApolloProvider>
+    </Connect>
   );
 }
 

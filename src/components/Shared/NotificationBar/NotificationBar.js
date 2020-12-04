@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import iconRocket from '../../../assets/Icon__Network--xDAI.png';
-import {
-  CloseOutlined,
-  ArrowRightOutlined,
-  OrderedListOutlined,
-} from '@ant-design/icons';
+import { CloseOutlined, OrderedListOutlined } from '@ant-design/icons';
 
 import './NotificationBar.scss';
 
@@ -23,26 +19,13 @@ const NotificationBar = () => {
           <div className="Row">
             <img src={iconRocket} alt="rocket" />
             <p>
-              <strong>DAOhaus is now available on the xDAI network!</strong>
-              <br />
-              Transaction fees got you down? Check our guide on how to switch to
-              xDAI for cheaper, faster interactions.
+              <strong>DAOhaus is now available on the Stacks mocknet!</strong>
             </p>
             <div className="Actions">
               <Link className="Button Secondary" to="/help#xDAI">
                 <OrderedListOutlined style={{ marginRight: '5px' }} /> Quick
                 Guide
               </Link>
-              {window.location.href.indexOf('xdai.daohaus.club') <= -1 ? (
-                <a
-                  className="Button Outlined Secondary"
-                  href="https://xdai.daohaus.club/"
-                >
-                  Go to xDAI{' '}
-                  <ArrowRightOutlined style={{ marginLeft: '5px' }} />
-                </a>
-              ) : null}
-
               <button className="Simple" onClick={toggleBar}>
                 <CloseOutlined />
               </button>
