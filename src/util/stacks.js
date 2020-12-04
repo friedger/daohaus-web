@@ -9,8 +9,8 @@ export const connectOptions = onDidConnect => {
     authOrigin: authOrigin,
     onFinish: onDidConnect,
     appDetails: {
-      name: 'Stacks DAOs',
-      icon: 'http://localhost:3000/images/icon-512x512.png',
+      name: 'Stacks DAO Haus',
+      icon: 'https://stacks-dao-haus.netlify.app/images/icons/icon-512x512.png',
     },
   };
 };

@@ -23,11 +23,7 @@ const Routes = () => (
       exact
       component={Dao}
     />
-    <Route
-      path="/dao/v2/:contractAddress(\b0x[0-9a-f]{10,40}\b)"
-      exact
-      component={DaoV2}
-    />
+    <Route path="/dao/v2/:contractAddress" exact component={DaoV2} />
     <Route
       path="/apply/:contractAddress(\b0x[0-9a-f]{10,40}\b)"
       exact

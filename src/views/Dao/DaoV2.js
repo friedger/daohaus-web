@@ -11,6 +11,7 @@ import ApplicationList from '../../components/MemberList/ApplicationList';
 import supportedChains from '../../util/chains';
 
 import './Dao.scss';
+import { DAO1 } from '../../util/constants';
 
 const chainData = supportedChains[+process.env.REACT_APP_NETWORK_ID];
 
@@ -50,17 +51,18 @@ const DaoV2 = props => {
         props.match.params.contractAddress,
         web3Context.web3Service,
       );
-      await molochService.initContract();
+      // TODO await molochService.initContract();
 
       setMolochService(molochService);
     }
   };
 
   const getDao = async () => {
-    const { isLoading, isError, data } = await client.query({
-      query: GET_MOLOCH,
-      variables: { contractAddr: props.match.params.contractAddress },
-    });
+    const { isLoading, isError, data } = {
+      isLoading: false,
+      isError: false,
+      data: { moloch: DAO1 },
+    };
 
     isLoading && setLoading(loading);
     isError && setError(error);

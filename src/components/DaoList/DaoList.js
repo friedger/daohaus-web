@@ -25,9 +25,11 @@ const DaoList = () => {
       const memberCount = dao.members.length > (state.filters.members[0] || 0);
       const versionMatch = state.filters.versions.includes(dao.version);
       const purposeMatch = state.filters.purpose.includes(dao.apiData.purpose);
+      console.log(purposeMatch, versionMatch, memberCount);
       return !dao.apiData.hide && memberCount && versionMatch && purposeMatch;
     });
 
+    console.log({ filteredDaos });
     const sortedDaos = _.orderBy(
       filteredDaos,
       [
